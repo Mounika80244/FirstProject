@@ -1,0 +1,26 @@
+<div class="table-container">
+  <p>{{errormsg}}</p>
+    <table class="table " *ngIf="employees && employees.length">
+      <thead>
+        
+        <tr >
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+      
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.fullName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    
+  </div>

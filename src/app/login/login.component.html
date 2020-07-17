@@ -1,0 +1,38 @@
+<!-- <h4>Register your Details</h4><br> -->
+<div><h3 style="text-align:center;">Register your Details</h3> </div><br>
+<div class="align"> 
+    <form [formGroup]="Form"  >
+<label>Name</label><br>
+<mat-form-field>
+<input id="name" type="text" matInput [(ngModel)]="Name" formControlName="Name">
+</mat-form-field>
+<mat-error *ngIf="Form.get('Name').touched && Form.get('Name').hasError('required')">
+name is required
+</mat-error>
+<br><br>
+
+
+<label>age</label><br>
+<mat-form-field>
+<input id="age" [(ngModel)]="age" matInput type="text" formControlName="age" />
+</mat-form-field>
+<br><br>
+<input type="radio"  formControlName="contact" (click)="oncontact('phone')" id="phone" value="phone">
+<label for="phone">Phone</label><br>
+<input type="radio" formControlName="contact" (click)="oncontact('email')" id="email" value="email">
+<label for="email">Mail</label> <br>
+<label>mail id</label><br>
+<mat-form-field>
+<input id="mail"  [(ngModel)]="mail" matInput formControlName="mail"/>
+</mat-form-field>
+<br><br>
+<label>phone no</label><br>
+<mat-form-field>
+<input id="phone"  [(ngModel)]="phone" matInput formControlName="phone" />
+</mat-form-field>
+<br><br>
+<button mat-button type="submit" routerLink="/data" [disabled]="!Form.valid">
+    submit
+</button>
+</form> 
+</div>

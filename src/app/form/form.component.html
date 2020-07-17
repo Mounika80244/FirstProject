@@ -1,0 +1,32 @@
+
+
+    
+    <form [formGroup]="RegisterForm">
+        <div class="align"><br>
+            <br>
+            <br>
+            <h3>Login Page</h3>
+        <br>
+<mat-form-field>
+    <input matInput placeholder="email" type="text"  formControlName="email" [(ngModel)]="email">
+</mat-form-field>
+<mat-error *ngIf="RegisterForm.get('email').touched && RegisterForm.get('email').hasError('required')">
+    Enter email
+    </mat-error>
+<br>
+<mat-form-field>
+    <input matInput placeholder="password" type="password"  [(ngModel)]="password" formControlName="password">
+</mat-form-field><br>
+<mat-error *ngIf="RegisterForm.get('password').touched && RegisterForm.get('password').hasError('required')">
+    Enter password
+    </mat-error>
+<button mat-button type="submit" (click)="submit()">
+    register
+</button>
+<br>
+<button mat-button routerLink="/login"  [disabled]="!RegisterForm.valid">
+login
+</button>
+</div>
+    </form>
+
